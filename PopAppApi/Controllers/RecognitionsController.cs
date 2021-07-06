@@ -14,8 +14,8 @@ using System.Collections.Generic;
 
 namespace API.Controllers
 {
-    [ApiController]
     [Authorize]
+    [ApiController]
     [Route("[controller]")]
     public class RecognitionsController : BaseController<RecognitionModel, RecognitionsBizLogic>
     {
@@ -74,6 +74,7 @@ namespace API.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet("{id}/mp3")]
         public async Task<IActionResult> GetMp3 (int id)
         {
